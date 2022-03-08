@@ -10,7 +10,6 @@
 
 .header {
   width: 100%;
-  height: 90vh;
   background-image: linear-gradient(to right, #0a2b5e, #0c0c20);
   color: #dadade;
   display: grid;
@@ -67,7 +66,7 @@
   background-image: url("../images/ezgif-2-492fa5aed932.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 80% 100%;
+  background-size: contain;
   display: grid;
   grid-template-columns: 0.35fr 1.55fr 3fr;
   grid-template-rows: auto;
@@ -148,6 +147,7 @@
 
 .solutions-info h1 {
   font-size: 3em;
+  margin-bottom: 1.5em;
 }
 
 .managed-it {
@@ -157,12 +157,12 @@
 .managed-it img {
   width: 30%;
   height: 35%;
-  margin: 4em 0 2em 0;
   border-radius: 50%;
   box-shadow: 0.1em 0.1em #F3f3f9;
 }
 
 .managed-it h1 {
+  margin-top: 1.5em;
   font-size: 1.5em;
   font-weight: bolder;
 }
@@ -181,7 +181,7 @@
   grid-template-columns: 0.25fr 1fr 0.25fr 1fr 0.25fr;
   grid-template-rows: auto;
   grid-template-areas:
-  ". image . growth .";
+  ". image . growth growth";
 }
 
 .features > img {
@@ -208,10 +208,10 @@
   width: 25%;
   height: 25%;
   float: left;
+  padding-right: 1em;
 }
 
 .growth-items h3, .growth-items p {
-  margin-left: 8em;
   margin-bottom: 1em;
   line-height: 1.6em;
   opacity: 0.8;
@@ -518,6 +518,7 @@
   justify-content: center;
   text-align: center;
   row-gap: 2em;
+  padding-top: 2em;
 }
 
 .play-button {
@@ -587,7 +588,7 @@
 .logo-name {
   position: absolute;
   top: 2.5%;
-  left: 20%;
+  left: 50px;
   font-size: 1.4em;
   font-weight: 800;
   letter-spacing: 0.05;
@@ -680,6 +681,7 @@
   font-weight: 500;
   opacity: 0.9;
   color: #6e6969;
+  padding-bottom: 1em;
 }
 
 .pink-text, .fa-heart {
@@ -691,6 +693,15 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .solutions,
+  .features,
+  .industries,
+  .partner,
+  .great-stuff,
+  .footer {
+    height: auto;
+  }
+
   .industries {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
@@ -707,6 +718,18 @@
 }
 
 @media screen and (max-width: 768px) {
+  .main {
+    padding: 1.5em 0;
+  }
+
+  .info h1 {
+    font-size: 2em;
+  }
+
+  .info p {
+    font-size: 0.8em;
+  }
+
   .nav-bar span {
     font-size: 0.8em;
   }
@@ -717,6 +740,18 @@
 
   .solutions {
     gap: 1em 2em;
+  }
+
+  .solutions-info h1 {
+    font-size: 2.3em;
+  }
+
+  .managed-it h1 {
+    font-size: 1.2em;
+  }
+
+  .managed-it p {
+    font-size: 0.8em;
   }
 
   .managed-it img {
@@ -750,6 +785,41 @@
     padding: 1em;
     width: 75vw;
     height: 75vh;
+    margin: 0 auto;
+  }
+
+  .growth {
+    padding: 1em;
+  }
+
+  .growth h1 {
+    font-size: 2em;
+  }
+
+  .growth-items img {
+    width: 20%;
+    height: 20%;
+    float: none;
+  }
+
+  .get-started {
+    height: auto;
+  }
+
+  .get-started button {
+    padding: 0.5em 1.2em;
+  }
+
+  .get-started h1 {
+    font-size: 2rem;
+  }
+
+  .play-button {
+    height: 30%;
+  }
+
+  .fa-play {
+    font-size: 1.2em;
   }
 }
 
@@ -840,14 +910,6 @@
     height: 60vh;
   }
 
-  .growth {
-    padding: 1em;
-  }
-
-  .growth h1 {
-    font-size: 2em;
-  }
-
   .industries {
     grid-template-rows: auto;
     grid-template-columns: 1fr;
@@ -883,13 +945,23 @@
     "stuff1"
     "stuff2"
     "stuff3";
-    padding: 1em 2em;
-    gap: 0;
-    height: 200vh;
+    gap: 0 0;
+    margin-bottom: 4em;
   }
 
   .great-stuff-info h1 {
     font-size: 1.5em;
+  }
+
+  .design {
+    width: 100vw;
+    height: 60vh;
+  }
+
+  .stuff-first h2,
+  .stuff-second h2,
+  .stuff-third h2 {
+    margin: -2em 0;
   }
 
   .get-started h1 {
@@ -918,19 +990,11 @@
     margin-top: 2em 0;
     padding: 1em 0;
   }
-
-  .logo-name {
-    left: 10%;
-  }
 }
 
 @media screen and (max-width: 350px) {
   .quote {
     font-size: 0.8em;
-  }
-
-  .growth {
-    padding: 0;
   }
 
   .growth h1 {
@@ -957,7 +1021,7 @@
     font-size: 0.8em;
   }
 
-  .logo-name {
-    left: 20%
+  .get-started h1 {
+    font-size: 1em;
   }
 }
